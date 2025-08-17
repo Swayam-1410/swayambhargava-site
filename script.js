@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('nav a[href^="#"]');
+  // Smooth scrolling for anchor links
+  const links = document.querySelectorAll('a[href^="#"]');
   links.forEach(link => {
     link.addEventListener('click', event => {
-      event.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
+      const targetId = link.getAttribute('href');
+      if (targetId.length > 1) {
+        event.preventDefault();
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     });
   });
 });
