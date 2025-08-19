@@ -103,8 +103,11 @@ main { margin-top: 4rem; }
   background-size: 150px 150px;
   background-repeat: no-repeat;
   background-position: 95% 10%;
-  opacity: 0.2;
-  border-radius: 50%;
+  /* Remove the decorative image overlay */
+  opacity: 0;
+  border-radius: 0;
+  background-image: none;
+  background: none;
 }
 
 .hero h1 {
@@ -293,6 +296,9 @@ section {
 @media (max-width: 768px) {
   .cards { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .hero::before {
+    /* Remove background image on smaller screens too */
+    background-image: none;
+    background: none;
     background-size: 120px 120px;
     background-position: 90% 5%;
   }
@@ -318,17 +324,14 @@ section {
   transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-/* Override hero background overlay for better UI */
-.hero::before {
-  background-image: none;
-  background: none;
-  opacity: 0;
-  border-radius: 0;
-}
-@media (max-width: 768px) {
-  .hero::before {
-    background-image: none;
-    background: none;
-  }
-}
 
+/*
+ * Completely hide the decorative overlay on the hero section.
+ * By default the design placed a faint, circular hero photo in the top right using
+ * a ::before pseudo-element with a base64-encoded image. Even though the opacity
+ * was set to zero, the image continued to load and caused layout issues. This
+ * rule disables the pseudo-element across all breakpoints to ensure a clean hero.
+ */
+.hero::before {
+  display: none !important;
+}

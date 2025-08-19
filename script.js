@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let gameMode = false;
     let secretNumber = null;
     const commands = {
-      whoami: () => 'Swayam Bhargava\nFounder & builder. Former trader on the exotics desk (Morgan Stanley) and BITS Pilani grad.\nCurrently building exciting things in stealth.',
+      whoami: () => 'Swayam Bhargava\nBuilder & ex-trader, turning chaos into opportunity. Former exotics trader at Morgan Stanley and BITS Pilani grad.\nCurrently building exciting things in stealth.',
       projects: () => 'Current: MountainCreek Luxury Villa – a serene escape in Udaipur.
 Upcoming: More ventures in the works… stay tuned.',
       socials: () => 'Instagram: https://www.instagram.com/swayambhargava
