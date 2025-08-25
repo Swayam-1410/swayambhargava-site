@@ -9,10 +9,17 @@ function startGame() {
   return "I'm thinking of a number between 1 and 100. Enter your guess:";
 }
 
+// Reset game state (useful for tests)
+function resetGame() {
+  gameMode = false;
+  secretNumber = null;
+}
+
 // Allow Node.js tests to import the game logic
 if (typeof module !== 'undefined') {
   module.exports = {
     startGame,
+    resetGame,
     getState: () => ({ gameMode, secretNumber })
   };
 }

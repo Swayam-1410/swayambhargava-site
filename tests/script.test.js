@@ -1,4 +1,8 @@
-const { startGame, getState } = require('../script');
+const { startGame, getState, resetGame } = require('../script');
+
+beforeEach(() => {
+  resetGame();
+});
 
 test('game command activates game mode and sets secret number', () => {
   startGame();
