@@ -19,14 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let secretNumber = null;
     const commands = {
       whoami: () => 'Swayam Bhargava\nBuilder & ex-trader, turning chaos into opportunity. Former exotics trader at Morgan Stanley and BITS Pilani grad.\nCurrently building exciting things in stealth.',
-      projects: () => 'Current: MountainCreek Luxury Villa – a serene escape in Udaipur.
-Upcoming: More ventures in the works… stay tuned.',
-      socials: () => 'Instagram: https://www.instagram.com/swayambhargava
-X/Twitter: https://x.com/SwayamBhargava
-LinkedIn: https://www.linkedin.com/in/swayambhargava',
+      projects: () => `Current: MountainCreek Luxury Villa – a serene escape in Udaipur.\nUpcoming: More ventures in the works… stay tuned.`,
+      socials: () => `Instagram: https://www.instagram.com/swayambhargava\nX/Twitter: https://x.com/SwayamBhargava\nLinkedIn: https://www.linkedin.com/in/swayambhargava`,
       random: () => {
         const facts = [
-          'Productivity tip: The best ideas often come when you're not staring at a screen.',
+          'Productivity tip: The best ideas often come when you\'re not staring at a screen.',
           'Fun fact: I once presented a product design to 200+ people and lived to tell the tale.',
           'Random idea: How about a café where you can book meetings with strangers to share business ideas?'
         ];
@@ -40,12 +37,7 @@ LinkedIn: https://www.linkedin.com/in/swayambhargava',
         secretNumber = Math.floor(Math.random() * 100) + 1;
         return 'I\'m thinking of a number between 1 and 100. Enter your guess:';
       },
-      help: () => 'Available commands:
-whoami – Learn about me.
-projects – What I'm working on.
-socials – My online presence.
-random – A random thought or idea.
-contact – Get my contact details.\ngame – Play a guessing game.\nclear – Clear the screen.',
+      help: () => `Available commands:\nwhoami – Learn about me.\nprojects – What I'm working on.\nsocials – My online presence.\nrandom – A random thought or idea.\ncontact – Get my contact details.\ngame – Play a guessing game.\nclear – Clear the screen.`,
       clear: () => { output.innerHTML = ''; return ''; }
     };
     prompt();
